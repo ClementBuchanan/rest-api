@@ -2,10 +2,10 @@
 
 const dynamoose = require('dynamoose');
 
-const PeopleSchema = new dynamoose.Schema({
+const createSchema = new dynamoose.Schema({
   'id': String,
   'name': String,
   'phone': String,
 });
 
-module.exports = dynamoose.model('people', PeopleSchema);
+module.exports = dynamoose.model('create', createSchema);

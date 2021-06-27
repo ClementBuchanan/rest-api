@@ -1,7 +1,7 @@
 // You can require any external dependencies here
 const uuid = require('uuid').v4;
 const dynamoose = require('dynamoose');
-const createModel = require('./read.schema.js');
+const readModel = require('./read.schema.js');
 
 
 // All Serverless functions (AWS and Azure) are "async" ...
@@ -15,7 +15,7 @@ exports.handler = async (event) => {
     const id = uuid();
 
     // Save it
-    const record = new createModel({ id, name, phone });
+    const record = new readModel({ id, name, phone });
     const data = await record.save();
 
     return {

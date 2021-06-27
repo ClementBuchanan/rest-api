@@ -3,7 +3,7 @@
 //require dependencies
 const uuid = require('uuid').v4;
 const dynamoose = require('dynamoose');
-const createModel = ('./delete.schema.js');
+const deleteModel = ('./delete.schema.js');
 const router = express.Router();
 
 //RESTful route declaration
@@ -25,7 +25,7 @@ exports.handler = async (events) => {
     const id = uuid;
 
     //save id
-    const record = new createModel({ id, name, phone });
+    const record = new deleteModel({ id, name, phone });
     const data = await record.save();
 
     return {
